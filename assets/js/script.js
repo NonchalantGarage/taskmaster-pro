@@ -83,10 +83,13 @@ $(".card .list-group").sortable({
   activate: function(event, ui) {
     console.log(ui);
     $(this).addClass("dropover");
+    $(".bottom-trash").addClass("bottom-trash-drag");
   },
   deactivate: function(event, ui) {
     console.log(ui);
     $(this).removeClass("dropover");
+    $(".bottom-trash").removeClass("bottom-trash-drag");
+
   },
   over: function(event) {
     console.log(event);
@@ -140,9 +143,12 @@ $("#trash").droppable({
   },
   over: function(event, ui) {
     console.log(ui);
+    $(".bottom-trash").addClass("bottom-trash-active");
+
   },
   out: function(event, ui) {
     console.log(ui);
+    $(".bottom-trash").removeClass("bottom-trash-active")
   }
 });
 
